@@ -41,3 +41,33 @@ Feature: Json path Filter
       * def filtered = karate.filter(json, condition)
       And print "filter json is ",filtered
       * match filtered == [{ "id": "7bc1909b2", "code": "test2", "label": "test2", "type": "Buy" }]
+
+
+  Scenario: jsonPath demo
+    * def jsonRequest =
+    """
+    {
+    "name": "Test",
+    "description": "Test Desc",
+    "data": [
+    {
+    "language": "French",
+    "messageText": "Warning",
+    "helpText": "helpText 1"
+    },
+    {
+    "language": "German",
+    "messageText": "Warning2",
+    "helpText": "helpText 2"
+    },
+    {
+    "language": "English",
+    "messageText": "Warning3",
+    "helpText": "helpText 3"
+    }
+    ]
+    }
+    """
+
+    * def allLanguages =  $jsonRequest.data[?(@.language!= null)].language
+    * print "checking ",allLanguages

@@ -62,7 +62,6 @@ return jsonData
 """
     * def headerObject = GetHeaders('shfusdfhdskfds', 'ueworuewoew767638')
     * karate.log("headers " , headerObject )
-#    * karate.log("headers " + GetHeaders('shfusdfhdskfds', 'ueworuewoew767638'))
 
 
   Scenario: fourth
@@ -112,5 +111,3 @@ return jsonData
 
       * if(jsonRequest.name = "Karate Test") result = doWork(jsonRequest)
     And print "result ", result
-
-
