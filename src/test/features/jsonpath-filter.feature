@@ -71,3 +71,7 @@ Feature: Json path Filter
 
     * def allLanguages =  $jsonRequest.data[?(@.language!= null)].language
     * print "checking ",allLanguages
+    * def allLanguages1 = $jsonRequest.data[*].language
+    * print "checking ",allLanguages1
+    * def allLanguages2 = karate.get('$jsonRequest.data[*].language')
+    * print "checking ",allLanguages2
