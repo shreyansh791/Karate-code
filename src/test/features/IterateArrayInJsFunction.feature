@@ -12,7 +12,7 @@ var data = [{'language':'JS'},{'framework':'karate'}]
 object[i].optionTranslationListItems = data
 finalResponse[i]=object[i]
     }
-    print("finalResponse ",JSON.stringify(finalResponse))
+    return finalResponse
     }
     """
     * def jsonReq =
@@ -35,4 +35,5 @@ finalResponse[i]=object[i]
   ]
     """
 
-    * fun(jsonReq,fun)
+    * def value = fun(jsonReq)
+    And print value
