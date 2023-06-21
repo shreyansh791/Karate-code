@@ -7,5 +7,4 @@ Feature: data driven f
       | 'Bob'  |   2 |
       | 'Wild' |   1 |
       | 'Nyan' |   3 |
-    * def result = call read('cat-create.feature') kittens
-#    And print "result ",result
+   * call read('cat-create.feature') kittens
