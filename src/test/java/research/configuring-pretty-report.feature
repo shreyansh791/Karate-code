@@ -4,7 +4,7 @@ Feature: feature1
     * configure logPrettyResponse = true
 
   Scenario: create a user and then get it by id
-    * def user =
+    * def user1 =
       """
       {
         "name": "Test User1234567",
@@ -20,7 +20,7 @@ Feature: feature1
       """
 
     Given url 'https://jsonplaceholder.typicode.com/users'
-    And request user
+    And request user1
     When method post
     Then status 201
 
