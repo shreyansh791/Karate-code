@@ -1,6 +1,6 @@
 Feature: f1
 
-Background:
+  Background:
 #  * configure abortedStepsShouldPass = true
   Scenario Outline: s1
     * def request1 =
@@ -18,7 +18,13 @@ Background:
 
 #    * print request1.SuccessfulRequests[0].Status
     * print request1
-    * if(request1.SuccessfulRequests[0].Status >= 400) {karate.log("Skipping this iteration..."); karate.abort();}
+    * eval
+    """
+     if(request1.SuccessfulRequests[0].Status >= 400) {
+  karate.log("Skipping this iteration...");
+  karate.abort();
+  }
+"""
 
     * print "check "
     * print "check1 "
