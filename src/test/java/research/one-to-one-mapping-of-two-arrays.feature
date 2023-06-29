@@ -1,5 +1,3 @@
-
-
 Feature: f11
   Scenario: s1
 
