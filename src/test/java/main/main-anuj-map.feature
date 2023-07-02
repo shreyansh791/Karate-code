@@ -1,7 +1,7 @@
 Feature: f2
 
   Scenario: s2
- * def jsonRequest =
+    * def jsonRequest =
     """
    {
 	"Items": [
@@ -99,5 +99,4 @@ console.log(" group[listItem.language] 2 ", JSON.stringify(group));
     """
 
     * def data =  fun(jsonRequest)
-  * karate.log("##########################", data)
-
+    * karate.log("##########################", data)
