@@ -83,7 +83,7 @@ var group = {}
 karate.forEach(data.Items,function(item){
 karate.forEach(item.ListItems,function(listItem){
 group[listItem.language] = group[listItem.language] || []
-            group[listItem.language].push({
+ group[listItem.language].push({
                 optionNumber: item.optionNumber,
                 optionValue: listItem.value,
             })
@@ -98,4 +98,3 @@ const respData = Object.entries(group).map(([key, value]) => ({
     """
     * def check = fun22(jsonRequest)
     * print check
-
