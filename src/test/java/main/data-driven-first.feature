@@ -61,8 +61,8 @@ Feature: data-driven feature
 
     Examples:
       | firstName  | id  | isManager |
-      | Shreyansh  | 100 | false     |
-      |            | 200 | true      |
+      | Shreyansh  |     | false     |
+      | Saurabh    | 200 | true      |
       | Raghvendra | 200 |           |
 
 
