@@ -16,14 +16,25 @@ Feature: using the results of an API call as a data-source
   @setup
   Scenario: S2
     * def names = ["COUNTRY", "NAME", "SURNAME", "SEX", "ID"]
-    * def data = names.map(x => ({ name: x }))
-    * print data
+    * def data2 = names.map(x => ({ name: x }))
+    * print data2
 
   Scenario Outline: name:
     * print 'name is:', name
 
     Examples:
-      | karate.setup().data |
+      | karate.setup().data2 |
+
+  @setup=myname
+  Scenario:
+    * def data = [{ a: 1 }, { a: 2}]
+
+  Scenario Outline:
+    * print __row
+    * print a
+
+    Examples:
+      | karate.setup('myname').data |
 
 
 #    @setup will be introduced as a "built-in" tag.
