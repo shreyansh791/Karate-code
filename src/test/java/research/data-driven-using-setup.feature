@@ -36,6 +36,15 @@ Feature: using the results of an API call as a data-source
     Examples:
       | karate.setup('myname').data |
 
+  @setup=animal
+  Scenario:
+    * def animals = read('animal.json')
+    * print animals
+
+  Scenario Outline: Data from file
+    * print name, 'is', color
+    Examples:
+      | karate.setup('animal').animals |
 
 #    @setup will be introduced as a "built-in" tag.
 #    @setup will not be run when the Feature is run, it behaves like @ignore. it can only be "called"
