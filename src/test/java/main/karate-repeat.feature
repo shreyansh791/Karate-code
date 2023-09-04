@@ -5,3 +5,8 @@ Feature: karate repeat feature
 
     * def listOfData =  karate.repeat(10,fun)
     * print  listOfData
+
+    Scenario: second scenario
+      * def fun = function(i){ return i * 2 }
+      * def foo = karate.repeat(5, fun)
+      * match foo ==  [0,2,4,6,10]
