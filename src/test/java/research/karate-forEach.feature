@@ -49,3 +49,27 @@ Feature: karate for each
       """
 #      * karate.forEach(jsonArray,fun) below line also does the same.
     * jsonArray.forEach((item)=> fun(item))
+
+  Scenario: karate foreach example 2 using json object
+
+    * def jsonObject =
+      """
+      {
+      "id": 1,
+      "name": "Alice",
+      "age": 25,
+      "email": "alice@example.com"
+      }
+      """
+
+    * def iterateKeyValuePairs =
+    """
+    function(row)
+    {
+ karate.forEach(row, function(key) {
+ karate.log("key ", key)
+ karate.log(" value  ", row[key])
+    })
+    }
+    """
+    * iterateKeyValuePairs(jsonObject)
