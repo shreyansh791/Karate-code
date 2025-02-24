@@ -1,0 +1,22 @@
+mvn clean test -Donboarding_apig_client_secret=$onboarding_apig_client_secret -Dsolution_apig_client_secret=$solution_apig_client_secret -Dkarate.options='-t=@HealthCheckRMS' -Dkarate.env=${KARATE_ENV}
+
+mvn test "-Dkarate.options=--tags @check" -Dtest=ValidationStoreAPIRunnerTest  [very powerful]
+
+
+
+mvn test "-Dkarate.options=--tags @check"
+
+clean test "-Dkarate.options=--tags @debug"
+
+
+mvn test "-Dkarate.options=--tags @check" -Dkarate.env="qa"
+
+mvn test "-Dkarate.options=--tags @Regression" -Dtest=TestRunner
+ 
+mvn clean test -Dkarate.env="uat" -DdestEnv="dev" -Dtest=classpath:ValidationStore/datacreationscripts/datamigration/datapoints/datapoints.feature
+
+-Dkarate.options="path/to/your/feature/file.feature"
+
+
+working command.
+mvn clean test "-Dkarate.env=uat" -DdestEnv="dev" -Dkarate.options="classpath:ValidationStore/datacreationscripts/datamigration/datapoints/datapoints.feature"
